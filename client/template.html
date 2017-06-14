@@ -1,0 +1,60 @@
+<head>
+  <title>DemoApp 2017</title>
+</head>
+
+<template name="main">
+  <h1>Main page</h1>
+  {{> addpet}}
+  <hr>
+  {{> showpet}}
+</template>
+
+<template name="about">
+  <h1>About page</h1>
+  {{> addpet}}
+  <hr>
+  {{> showpet}}
+</template>
+
+<template name="showpet">
+  {{#if currentUser}}
+  <ul>
+  {{#each p in petlist}}
+    <li>{{> petrow pet=p}}</li>
+  {{/each}}
+  </ul>
+  {{else}}
+  <h1>You must log in to see the info!!</h1>
+  {{/if}}
+</template>
+
+<template name="petrow">
+  {{pet.name}}--{{pet.birthyear}}
+  <span class="glyphicon glyphicon-remove" aria-hidden="true"> </span>
+</template>
+
+<template name="addpet">
+  Name: <input type="text"
+               placeholder="pet's name"
+               id="name"><br>
+  birthyear <input type="text" id="birthyear"><br>
+  <button id="addpet" class="btn btn-primary">
+    Add to Collection
+  </button>
+</template>
+
+<template name="info">
+  <h1>Info page</h1>
+</template>
+
+<template name="layout">
+  <div class="container">
+  <h1>Yaxin(Selina)'s DemoApp 2017</h1>
+  {{> yield}}
+  <hr>
+  <a href="/">home</a>
+  <a href="abc/def/about">about</a>
+  <a href="/info">info</a>
+  {{>loginButtons}}
+  </div>
+</template>
