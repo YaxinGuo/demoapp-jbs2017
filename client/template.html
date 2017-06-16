@@ -1,5 +1,5 @@
 <head>
-  <title>DemoApp 2017</title>
+  <title>Selina's DemoApp 2017</title>
 </head>
 
 <template name="main">
@@ -29,15 +29,16 @@
 </template>
 
 <template name="petrow">
-  {{pet.name}}--{{pet.birthyear}}
-  <span class="glyphicon glyphicon-remove" aria-hidden="true"> </span>
+  {{pet.name}}--{{pet.birthyear}}--{{pet.gender}}
+  <span class="glyphicon glyphicon-heart" aria-hidden="true"> </span>
 </template>
 
 <template name="addpet">
   Name: <input type="text"
                placeholder="pet's name"
                id="name"><br>
-  birthyear <input type="text" id="birthyear"><br>
+  Birthyear <input type="text" placeholder="birthyear" id="birthyear"><br>
+  Gender <input type="text" placeholder="gender" id="gender"><br>
   <button id="addpet" class="btn btn-primary">
     Add to Collection
   </button>

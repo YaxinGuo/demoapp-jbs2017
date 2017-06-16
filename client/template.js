@@ -6,11 +6,13 @@ Template.addpet.events({
   'click button'(elt,instance) {
     const name = instance.$('#name').val();
     const year = instance.$('#birthyear').val();
+    const gender = instance.$('#gender').val();
     const birthyear = parseInt(year);
     console.log('adding '+name);
     instance.$('#name').val("");
     instance.$('#birthyear').val("");
-    Pet.insert({name:name,birthyear:birthyear})
+    instance.$('#gender').val("");
+    Pet.insert({name:name,birthyear:birthyear,gender:gender})
     //People.insert({name.birthyear})
   }
 })
